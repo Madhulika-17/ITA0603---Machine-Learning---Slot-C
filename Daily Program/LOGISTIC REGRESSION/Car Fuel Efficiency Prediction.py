@@ -1,0 +1,27 @@
+from sklearn.linear_model import LinearRegression
+
+# Training Data
+X = [
+    [1.0,900,60],
+    [1.2,950,70],
+    [1.4,1050,80],
+    [1.6,1150,90],
+    [1.8,1250,100],
+    [2.0,1350,110],
+    [2.2,1450,120],
+    [2.4,1550,130],
+    [2.6,1650,140],
+    [2.8,1750,150]
+]
+
+y = [24,22,20,18,16,15,13,12,11,10]
+
+# Train Model
+model = LinearRegression()
+model.fit(X, y)
+
+# Prediction
+new_car = [[1.5,1100,85]]
+prediction = model.predict(new_car)
+
+print("Predicted Mileage (km/L):", prediction[0])

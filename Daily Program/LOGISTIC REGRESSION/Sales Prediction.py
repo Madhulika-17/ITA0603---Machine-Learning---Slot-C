@@ -1,0 +1,27 @@
+from sklearn.linear_model import LinearRegression
+
+# Training Data
+X = [
+    [10,2,120],
+    [15,3,150],
+    [20,4,180],
+    [25,5,210],
+    [30,6,240],
+    [35,7,260],
+    [40,8,280],
+    [45,9,300],
+    [50,10,320],
+    [55,11,340]
+]
+
+y = [3.5,4.5,5.8,7.0,8.2,9.5,10.8,12.0,13.5,15.0]
+
+# Train Model
+model = LinearRegression()
+model.fit(X, y)
+
+# Prediction
+new_sales = [[38,7,270]]
+prediction = model.predict(new_sales)
+
+print("Predicted Monthly Sales (Lakhs):", prediction[0])
